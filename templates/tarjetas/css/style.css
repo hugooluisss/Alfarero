@@ -1,0 +1,294 @@
+@charset "utf-8";
+/* CSS Document */
+
+/* Import Font Awesome CSS */
+@import url("font-awesome.min.css");
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css?family=Amatic+SC:400,700|Raleway:400,600');
+
+body{
+	font-family: 'Raleway', sans-serif;
+	font-size:16px;
+	font-weight:400;
+	line-height:1.2em;
+}
+
+a{
+	color:#f67e1f;
+}
+
+img{
+	height:auto;
+	max-width:100%;
+}
+
+h1{
+	color:#002596;
+	font-family: 'Amatic SC', cursive;
+	font-size:48px;
+	font-weight:700;
+	line-height:1.2em;
+	text-transform:uppercase;
+	margin-bottom:20px;
+}
+
+h2{
+	background:url(../images/elements/arrow-yellow-right.png) top left no-repeat;
+	color:#f57e20;
+	font-family: 'Amatic SC', cursive;
+	font-size:36px;
+	font-weight:700;
+	line-height:1.2em;
+	padding-left:70px;
+	text-transform:uppercase;
+	margin-bottom:20px;
+}
+
+h3{
+	color:#009640;
+	font-family: 'Amatic SC', cursive;
+	font-size:36px;
+	font-weight:700;
+	line-height:1.2em;
+	text-transform:uppercase;
+	margin-bottom:20px;
+}
+
+header .cart i.fa{
+	color:#f67e1f;
+	font-size:22px;
+	padding-right:5px;
+}
+
+header .cart{
+	color:#000;
+	text-transform:uppercase;
+	font-weight:600;
+}
+
+header .cart a:hover{
+	color:#f4aa6f;
+	text-decoration:none;
+}
+
+/*****Style Menu*****/
+nav.navbar.bg-dark{
+	background-color:#fff !important;
+	border-bottom:1px solid #ccc;
+	box-shadow:0 0.15em 0.35em 0 rgba(0, 0, 0, 0.133);
+}
+
+.navbar-dark .navbar-toggler{
+	border-color:#2141a4;
+}
+
+.navbar-brand{
+	padding-right:80px;
+	padding-top:0;
+}
+
+.navbar{
+	padding:0 20px;
+}
+
+.navbar-nav li.nav-item{
+	font-size:12px;
+	text-transform:uppercase;
+}
+
+.navbar-nav li.nav-item a.nav-link{
+	color:#272727;
+	display:block;
+	padding:24px 20px;
+}
+
+.navbar-nav li.nav-item.active a.nav-link, .navbar-nav li.nav-item a.nav-link:hover, .navbar-nav li.nav-item.dropdown.show{
+	background:none;
+	box-shadow:0 4px 0 0 #f67e1f inset;
+	color:#b7b7b7;
+}
+
+.navbar-nav li.nav-item.dropdown.show a{
+	color:#b7b7b7;
+}
+
+.dropdown-icon::after{
+	content:"\f103" !important;
+	font-family:"FontAwesome" !important;
+}
+
+/*****SubMenu*****/
+li.nav-item.dropdown.show .dropdown-menu.show a.dropdown-item{
+	color:#272727;
+	font-size:10px;
+}
+
+/*****MAIN*****/
+#main{
+	padding-top:74px;
+}
+
+/*****Hero Home*****/
+.hero-home{
+	background:url(../images/elements/rombos-left.png) top left no-repeat, url(../images/elements/rombos-right.png) #faf9f7 top right no-repeat;
+	margin-bottom:50px;
+}
+
+.hero-home-img{
+	background:url(../images/elements/catalogo-productos.jpg) center top no-repeat;
+	padding:220px 0;
+}
+
+.hero-home span{
+	background:rgba(0,0,0,0.7);
+	display:block;
+	padding:40px 0;
+	text-align:center;
+}
+
+.hero-home span h1{
+	color:#fff;
+	font-size:150px;
+	line-height:1em;
+	font-weight:700;
+	text-transform:uppercase;
+}
+
+/*****Intro Home*****/
+.intro-home{
+	background:url(../images/elements/rombos-left.png) top left no-repeat, url(../images/elements/rombos-right.png) top right no-repeat;
+	color:#002596;
+	padding:30px 0;
+}
+
+/*****Category Intro*****/
+.category-wrap{
+	border-top:4px dotted #00979D;
+	padding:50px 0;
+}
+
+.category-intro{
+	padding:0 0 30px;
+}
+
+.category-intro h2{
+	background:none;
+	color:#002596;
+	font-size:60px;
+	padding:0;
+	text-align:center;
+}
+
+.category-intro-txt{
+	background:#002596;
+	color:#fff;
+	font-weight:600;
+	padding:20px;
+}
+
+/*****Category Products*****/
+.wrap-product{
+	padding-bottom:30px;
+}
+
+.title-product{
+	color:#009640;
+	font-weight:600;
+	text-transform:uppercase;
+	padding:10px 0;
+}
+
+.price-product{
+	background:url(../images/elements/rombo-price.png) left top no-repeat;
+	color:#f67e1f;
+	display:block;
+	font-family: 'Amatic SC', cursive;
+	font-size:20px;
+	font-weight:700;
+	line-height:25px;
+	padding:0 0 10px 15px;
+	text-transform:uppercase;
+}
+
+.button-product{
+	background:url(../images/elements/arrow-dotted.png) left no-repeat;
+	text-align:right;
+}
+
+button.add-to-cart{
+	background:#ffde00;
+	border:0;
+	color:#002596;
+	display:inline-block;
+	font-weight:600;
+	padding:10px 15px;
+}
+
+button.add-to-cart:hover{
+	opacity:0.8;
+	text-decoration:none;
+}
+
+/*****MODAL*****/
+.modal-dialog{
+	max-width:800px;
+}
+.modal-content{
+	border:0;
+	border-radius:0;
+}
+
+.modal-header{
+	border:0;
+}
+
+.modal-header .close{
+	text-align:right;
+	color:#000;
+}
+
+.modal-body{
+	text-align:center;
+}
+
+.modal-body h2{
+	background:none;
+	color:#002596;
+	font-size:80px;
+	padding:0;
+}
+
+.wrap-modal-description{
+	text-align:left;
+	padding:30px;
+}
+
+.description-product{
+	color:#002596;
+	padding:0 0 20px;
+}
+
+.quantity-product input{
+	font-size:12px;
+	height:30px;
+	padding:5px;
+	text-align:center;
+	width:100%;
+}
+
+.modal-footer{
+	border:0;
+}
+
+.modal-footer .add-to-cart{
+	background:#009640;
+	color:#fff;
+}
+
+/*****Animated Required*****/	
+.hidden-animated{
+     opacity:0;
+}
+.visible-animated{
+     opacity:1;
+}
