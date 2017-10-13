@@ -14,6 +14,7 @@
 						<td>{$row.nombre}</td>
 						<td>{$row.categoria}</td>
 						<td style="text-align: right">
+							<button type="button" class="btn btn-primary btn-xs" action="conceptos" title="Conceptos del producto" datos='{$row.json}' data-toggle="modal" data-target="#winListaConceptos"><i class="fa fa-calculator"></i></button>
 							<button type="button" class="btn btn-primary btn-xs" action="upload" title="Subir imágenes" datos='{$row.json}' data-toggle="modal" data-target="#winImagenes"><i class="fa fa-upload"></i></button>
 							<button type="button" class="btn btn-primary btn-xs" action="modificar" title="Modificar" datos='{$row.json}'><i class="fa fa-edit"></i></button>
 							<button type="button" class="btn btn-danger btn-xs" action="eliminar" title="Eliminar" identificador="{$row.idProducto}"><i class="fa fa-times"></i></button>

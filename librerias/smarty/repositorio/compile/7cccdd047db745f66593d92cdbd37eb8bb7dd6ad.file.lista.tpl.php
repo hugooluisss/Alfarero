@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.11, created on 2017-10-10 19:18:28
+<?php /* Smarty version Smarty-3.1.11, created on 2017-10-13 09:17:19
          compiled from "templates/plantillas/modulos/productos/lista.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:148065435559d4226937ec23-50060277%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '7cccdd047db745f66593d92cdbd37eb8bb7dd6ad' => 
     array (
       0 => 'templates/plantillas/modulos/productos/lista.tpl',
-      1 => 1507681016,
+      1 => 1507904237,
       2 => 'file',
     ),
   ),
@@ -46,6 +46,8 @@ $_smarty_tpl->tpl_vars["row"]->_loop = true;
 						<td><?php echo $_smarty_tpl->tpl_vars['row']->value['categoria'];?>
 </td>
 						<td style="text-align: right">
+							<button type="button" class="btn btn-primary btn-xs" action="conceptos" title="Conceptos del producto" datos='<?php echo $_smarty_tpl->tpl_vars['row']->value['json'];?>
+' data-toggle="modal" data-target="#winListaConceptos"><i class="fa fa-calculator"></i></button>
 							<button type="button" class="btn btn-primary btn-xs" action="upload" title="Subir imágenes" datos='<?php echo $_smarty_tpl->tpl_vars['row']->value['json'];?>
 ' data-toggle="modal" data-target="#winImagenes"><i class="fa fa-upload"></i></button>
 							<button type="button" class="btn btn-primary btn-xs" action="modificar" title="Modificar" datos='<?php echo $_smarty_tpl->tpl_vars['row']->value['json'];?>

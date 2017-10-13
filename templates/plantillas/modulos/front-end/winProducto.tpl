@@ -18,20 +18,22 @@
 						<div class="col-md-7">
 							<h3 campo="nombre">Tutoria para Primaria</h3>
 							<div campo="descripcion" class="description-product"></div>
-							<div class="wrap-modal-price row">
-								<div class="quantity-product col-md-3">
-									<input type="text" placeholder="Cantidad">
+							<div class="conceptos">
+								<div class="wrap-modal-price row">
+									<div class="quantity-product col-md-3">
+										<input type="text" placeholder="Cantidad">
+									</div>
+									<div class="price-product">
+										1 Niño por una Semana Q100
+									</div>
 								</div>
-								<div class="price-product">
-									1 Niño por una Semana Q100
-								</div>
-							</div>
-							<div class="wrap-modal-price row">
-								<div class="quantity-product col-md-3">
-									<input type="text" placeholder="Cantidad">
-								</div>
-								<div class="price-product">
-									1 Niño por un Mes Q400
+								<div class="wrap-modal-price row">
+									<div class="quantity-product col-md-3">
+										<input type="text" placeholder="Cantidad">
+									</div>
+									<div class="price-product">
+										1 Niño por un Mes Q400
+									</div>
 								</div>
 							</div>
 						</div>

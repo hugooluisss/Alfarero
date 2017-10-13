@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.11, created on 2017-10-10 21:46:02
+<?php /* Smarty version Smarty-3.1.11, created on 2017-10-13 13:25:21
          compiled from "templates/plantillas/modulos/front-end/winProducto.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:167109126459d30189537867-13018175%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'ed4b160f5da5d0c70ff95fa1c02a447ef15d9783' => 
     array (
       0 => 'templates/plantillas/modulos/front-end/winProducto.tpl',
-      1 => 1507689960,
+      1 => 1507913626,
       2 => 'file',
     ),
   ),
@@ -46,20 +46,22 @@ tarjetas/images/products/relleno-sanitario/almuerzo-nutritivo.jpg"></div>
 						<div class="col-md-7">
 							<h3 campo="nombre">Tutoria para Primaria</h3>
 							<div campo="descripcion" class="description-product"></div>
-							<div class="wrap-modal-price row">
-								<div class="quantity-product col-md-3">
-									<input type="text" placeholder="Cantidad">
+							<div class="conceptos">
+								<div class="wrap-modal-price row">
+									<div class="quantity-product col-md-3">
+										<input type="text" placeholder="Cantidad">
+									</div>
+									<div class="price-product">
+										1 Niño por una Semana Q100
+									</div>
 								</div>
-								<div class="price-product">
-									1 Niño por una Semana Q100
-								</div>
-							</div>
-							<div class="wrap-modal-price row">
-								<div class="quantity-product col-md-3">
-									<input type="text" placeholder="Cantidad">
-								</div>
-								<div class="price-product">
-									1 Niño por un Mes Q400
+								<div class="wrap-modal-price row">
+									<div class="quantity-product col-md-3">
+										<input type="text" placeholder="Cantidad">
+									</div>
+									<div class="price-product">
+										1 Niño por un Mes Q400
+									</div>
 								</div>
 							</div>
 						</div>

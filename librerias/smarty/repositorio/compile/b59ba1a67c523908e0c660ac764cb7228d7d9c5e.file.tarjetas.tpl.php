@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.11, created on 2017-10-02 22:18:33
+<?php /* Smarty version Smarty-3.1.11, created on 2017-10-13 08:50:21
          compiled from "templates/plantillas/layout/tarjetas.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:186517482459d301893976b2-14581153%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'b59ba1a67c523908e0c660ac764cb7228d7d9c5e' => 
     array (
       0 => 'templates/plantillas/layout/tarjetas.tpl',
-      1 => 1506402490,
+      1 => 1507902390,
       2 => 'file',
     ),
   ),
@@ -15,14 +15,14 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'function' => 
   array (
   ),
+  'version' => 'Smarty-3.1.11',
+  'unifunc' => 'content_59d301894bb671_44145253',
   'variables' => 
   array (
     'PAGE' => 0,
     'script' => 0,
   ),
   'has_nocache_code' => false,
-  'version' => 'Smarty-3.1.11',
-  'unifunc' => 'content_59d301894bb671_44145253',
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_59d301894bb671_44145253')) {function content_59d301894bb671_44145253($_smarty_tpl) {?><!DOCTYPE html>
 <html lang="es">

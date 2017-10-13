@@ -75,6 +75,11 @@ $(document).ready(function(){
 				$("#winImagenes").attr("producto", el.idProducto);
 			});
 			
+			$("[action=conceptos]").click(function(){
+				var el = jQuery.parseJSON($(this).attr("datos"));
+				$("#winConceptos").find("#producto").val(el.idProducto);
+			});
+			
 			$("#tblDatos").DataTable({
 				"responsive": true,
 				"language": espaniol,
