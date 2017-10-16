@@ -35,5 +35,8 @@ switch($objModulo->getId()){
 		}
 		
 		$smarty->assign("categorias", $datos);
+		
+		$orden = new TOrden;
+		$smarty->assign("totalProductosCarrito", $orden->getTotalProductos());
 	break;
 }

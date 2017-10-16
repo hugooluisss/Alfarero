@@ -7,7 +7,7 @@
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
 	<title>.:: {$PAGE.empresaAcronimo} ::.</title>
 		<base href="{$PAGE.url}index.php" target="_top">
-		{if $PAGE.debug}
+		{if $PAGE.debug and false}
 		<link rel="stylesheet/less" type="text/css" href="{$PAGE.ruta}build/less/AdminLTE.less" />
 		<link rel="stylesheet/less" type="text/css" href="{$PAGE.ruta}build/less/skins/_all-skins.less" />
 		{else}

@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.11, created on 2017-10-13 13:25:21
+<?php /* Smarty version Smarty-3.1.11, created on 2017-10-15 18:51:44
          compiled from "templates/plantillas/modulos/front-end/winProducto.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:167109126459d30189537867-13018175%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'ed4b160f5da5d0c70ff95fa1c02a447ef15d9783' => 
     array (
       0 => 'templates/plantillas/modulos/front-end/winProducto.tpl',
-      1 => 1507913626,
+      1 => 1508111395,
       2 => 'file',
     ),
   ),
@@ -41,8 +41,13 @@ tarjetas/images/elements/rombo-modal-left.png"></div>
 tarjetas/images/elements/rombo-modal-right.png"></div>
 					</div>
 					<div class="wrap-modal-description row">
-						<div class="col-md-5"><img src="<?php echo $_smarty_tpl->tpl_vars['PAGE']->value['ruta'];?>
-tarjetas/images/products/relleno-sanitario/almuerzo-nutritivo.jpg"></div>
+						<div class="col-md-5">
+							<img class="imgPrincipal" src="<?php echo $_smarty_tpl->tpl_vars['PAGE']->value['ruta'];?>
+tarjetas/images/products/relleno-sanitario/almuerzo-nutritivo.jpg">
+							<hr />
+							<div class="col-xs-12 listaImagenes">
+							</div>
+						</div>
 						<div class="col-md-7">
 							<h3 campo="nombre">Tutoria para Primaria</h3>
 							<div campo="descripcion" class="description-product"></div>

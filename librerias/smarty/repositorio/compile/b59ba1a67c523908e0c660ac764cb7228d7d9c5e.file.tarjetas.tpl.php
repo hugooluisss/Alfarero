@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.11, created on 2017-10-13 08:50:21
+<?php /* Smarty version Smarty-3.1.11, created on 2017-10-15 21:19:02
          compiled from "templates/plantillas/layout/tarjetas.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:186517482459d301893976b2-14581153%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'b59ba1a67c523908e0c660ac764cb7228d7d9c5e' => 
     array (
       0 => 'templates/plantillas/layout/tarjetas.tpl',
-      1 => 1507902390,
+      1 => 1508120321,
       2 => 'file',
     ),
   ),
@@ -20,6 +20,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'variables' => 
   array (
     'PAGE' => 0,
+    'totalProductosCarrito' => 0,
     'script' => 0,
   ),
   'has_nocache_code' => false,
@@ -45,10 +46,15 @@ index.php" target="_top">
 		<link rel="stylesheet" href="<?php echo $_smarty_tpl->tpl_vars['PAGE']->value['ruta'];?>
 tarjetas/css/bootstrap.min.css">
 	    
-		<!-- Style CSS -->
-		<link href="<?php echo $_smarty_tpl->tpl_vars['PAGE']->value['ruta'];?>
+	    <!-- Style CSS -->
+	    <?php if ($_smarty_tpl->tpl_vars['PAGE']->value['debug']){?>
+			<link rel="stylesheet/less" type="text/css" href="<?php echo $_smarty_tpl->tpl_vars['PAGE']->value['ruta'];?>
+tarjetas/css/style.less"/>
+		<?php }else{ ?>
+			<link href="<?php echo $_smarty_tpl->tpl_vars['PAGE']->value['ruta'];?>
 tarjetas/css/style.css" rel="stylesheet" type="text/css">
-	
+		<?php }?>
+		
 		<!-- Style Animate CSS -->
 		<link href="<?php echo $_smarty_tpl->tpl_vars['PAGE']->value['ruta'];?>
 tarjetas/css/animate.css" rel="stylesheet" type="text/css">
@@ -97,7 +103,8 @@ tarjetas/images/logo.png" alt="Logo Alfarero">
 						</li>
 					</ul>
 					<div class="cart my-2 my-lg-0">
-						<i class="fa fa-shopping-cart" aria-hidden="true"></i> carrito <a href="#">(0)</a>
+						<i class="fa fa-shopping-cart" aria-hidden="true"></i> carrito <a href="#" class="totalCarrito">(<?php echo $_smarty_tpl->tpl_vars['totalProductosCarrito']->value;?>
+)</a>
 					</div>
 				</div>
 			</nav>
@@ -108,8 +115,10 @@ tarjetas/images/logo.png" alt="Logo Alfarero">
 
 		<?php }?>
 		
+		<!--<script src="<?php echo $_smarty_tpl->tpl_vars['PAGE']->value['ruta'];?>
+tarjetas/js/jquery-3.2.1.slim.min.js"></script>-->
 		<script src="<?php echo $_smarty_tpl->tpl_vars['PAGE']->value['ruta'];?>
-tarjetas/js/jquery-3.2.1.slim.min.js"></script>
+plugins/jQuery/jQuery-2.1.4.min.js"></script>
 	    <script src="<?php echo $_smarty_tpl->tpl_vars['PAGE']->value['ruta'];?>
 tarjetas/js/popper.min.js"></script>
 	    <script src="<?php echo $_smarty_tpl->tpl_vars['PAGE']->value['ruta'];?>
@@ -131,9 +140,8 @@ $_smarty_tpl->tpl_vars['script']->_loop = true;
 ?m=<?php echo rand();?>
 "></script>
 		<?php } ?>
-	
-	    <?php if ($_smarty_tpl->tpl_vars['PAGE']->value['debug']){?>
-	    	<script src="https://cdnjs.cloudflare.com/ajax/libs/less.js/2.3.1/less.min.js" type="text/javascript"></script>
-	    <?php }?>
+		
+	   	<script src="<?php echo $_smarty_tpl->tpl_vars['PAGE']->value['ruta'];?>
+plugins/less.min.js" type="text/javascript"></script>
 	</body>
 </html><?php }} ?>

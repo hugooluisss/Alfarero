@@ -17,5 +17,64 @@ $(document).ready(function(){
 			win.find(".conceptos").append('<div class="wrap-modal-price row"><div class="quantity-product col-md-3"><input type="text" placeholder="Cantidad" concepto="' + el.idConcepto + '"></div><div class="price-product">' + el.descripcion + ' Q' + el.precio + '</div></div>');
 		});
 		
+		$(".imgPrincipal").prop("src", producto.imagen[0]);
+		
+		win.find('.listaImagenes').html("");
+		$.each(producto.imagen, function(i, el){
+			var img = $("<img />", {
+				src: el
+			});
+			
+			img.click(function(){
+				$(".imgPrincipal").prop("src", $(this).attr("src"));
+			});
+			
+			win.find('.listaImagenes').append(img);
+		});
+	});
+	
+	$("#winProducto").on('shown.bs.modal', function(e){
+		$("input:first-child").focus();
+	});
+	
+	$("#winProducto").find(".add-to-cart").click(function(){
+		var conceptos = new Array();
+		$("input[concepto]").each(function(){
+			var el = $(this);
+			if (el.val() != ''){
+				var obj = {};
+				obj.idConcepto = el.attr("concepto");
+				obj.cantidad = el.val();
+				
+				conceptos.push(obj);
+			}
+		});
+		
+		if (conceptos.length == 0){
+			alert("Indica una cantidad");
+			$("input:first-child").focus();
+		}else{
+			var obj = new TOrden;
+			obj.addMovs({
+				"conceptos": conceptos,
+				fn: {
+					before: function(){
+						$("#winProducto").find(".add-to-cart").prop("disabled", true);
+						$("#winProducto").find("input[concepto]").prop("disabled", true);
+					},
+					after: function(resp){
+						$("#winProducto").find(".add-to-cart").prop("disabled", false);
+						$("#winProducto").find("input[concepto]").prop("disabled", false);
+						
+						if (resp.band == true){
+							alert("Todo fue agregado a su carrito");
+							$("#winProducto").modal("hide");
+							$(".totalCarrito").html("(" + resp.totalProductos + ")");
+						}else
+							alert("Ocurrió un error, no se pudo agregar");
+					}
+				}
+			});
+		}
 	});
 });

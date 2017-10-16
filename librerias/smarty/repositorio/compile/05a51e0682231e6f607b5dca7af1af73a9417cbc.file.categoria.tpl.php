@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.11, created on 2017-10-13 08:50:21
+<?php /* Smarty version Smarty-3.1.11, created on 2017-10-15 18:39:45
          compiled from "templates/plantillas/modulos/front-end/categoria.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:194605719759d30189515c75-52983943%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '05a51e0682231e6f607b5dca7af1af73a9417cbc' => 
     array (
       0 => 'templates/plantillas/modulos/front-end/categoria.tpl',
-      1 => 1507902390,
+      1 => 1508110783,
       2 => 'file',
     ),
   ),
@@ -71,7 +71,8 @@ $_smarty_tpl->tpl_vars["producto"]->_loop = true;
 							<?php echo $_smarty_tpl->tpl_vars['producto']->value['nombre'];?>
 
 						</div>
-						<div class="price-product">Q100</div>
+						<div class="price-product"><?php if (count($_smarty_tpl->tpl_vars['producto']->value['conceptos'])){?>Q <?php echo $_smarty_tpl->tpl_vars['producto']->value['conceptos'][0]['precio'];?>
+<?php }?></div>
 						<div class="button-product">
 							<button type="button" class="add-to-cart" data-toggle="modal" data-target="#winProducto" datos='<?php echo json_encode($_smarty_tpl->tpl_vars['producto']->value);?>
 '>

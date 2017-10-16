@@ -14,7 +14,12 @@
 						<div class="col-md-3"><img src="{$PAGE.ruta}tarjetas/images/elements/rombo-modal-right.png"></div>
 					</div>
 					<div class="wrap-modal-description row">
-						<div class="col-md-5"><img src="{$PAGE.ruta}tarjetas/images/products/relleno-sanitario/almuerzo-nutritivo.jpg"></div>
+						<div class="col-md-5">
+							<img class="imgPrincipal" src="{$PAGE.ruta}tarjetas/images/products/relleno-sanitario/almuerzo-nutritivo.jpg">
+							<hr />
+							<div class="col-xs-12 listaImagenes">
+							</div>
+						</div>
 						<div class="col-md-7">
 							<h3 campo="nombre">Tutoria para Primaria</h3>
 							<div campo="descripcion" class="description-product"></div>

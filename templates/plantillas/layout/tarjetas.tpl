@@ -15,9 +15,13 @@
 		<!-- Bootstrap CSS -->
 		<link rel="stylesheet" href="{$PAGE.ruta}tarjetas/css/bootstrap.min.css">
 	    
-		<!-- Style CSS -->
-		<link href="{$PAGE.ruta}tarjetas/css/style.css" rel="stylesheet" type="text/css">
-	
+	    <!-- Style CSS -->
+	    {if $PAGE.debug}
+			<link rel="stylesheet/less" type="text/css" href="{$PAGE.ruta}tarjetas/css/style.less"/>
+		{else}
+			<link href="{$PAGE.ruta}tarjetas/css/style.css" rel="stylesheet" type="text/css">
+		{/if}
+		
 		<!-- Style Animate CSS -->
 		<link href="{$PAGE.ruta}tarjetas/css/animate.css" rel="stylesheet" type="text/css">
 	
@@ -63,7 +67,7 @@
 						</li>
 					</ul>
 					<div class="cart my-2 my-lg-0">
-						<i class="fa fa-shopping-cart" aria-hidden="true"></i> carrito <a href="#">(0)</a>
+						<i class="fa fa-shopping-cart" aria-hidden="true"></i> carrito <a href="#" class="totalCarrito">({$totalProductosCarrito})</a>
 					</div>
 				</div>
 			</nav>
@@ -73,7 +77,8 @@
 			{include file=$PAGE.vista}
 		{/if}
 		
-		<script src="{$PAGE.ruta}tarjetas/js/jquery-3.2.1.slim.min.js"></script>
+		<!--<script src="{$PAGE.ruta}tarjetas/js/jquery-3.2.1.slim.min.js"></script>-->
+		<script src="{$PAGE.ruta}plugins/jQuery/jQuery-2.1.4.min.js"></script>
 	    <script src="{$PAGE.ruta}tarjetas/js/popper.min.js"></script>
 	    <script src="{$PAGE.ruta}tarjetas/js/bootstrap.min.js"></script>
 	    <script src="{$PAGE.ruta}tarjetas/js/viewportchecker.js"></script>
@@ -84,9 +89,7 @@
 	    {foreach from=$PAGE.scriptsJS item=script}
 			<script type="text/javascript" src="{$script}?m={rand()}"></script>
 		{/foreach}
-	
-	    {if $PAGE.debug}
-	    	<script src="https://cdnjs.cloudflare.com/ajax/libs/less.js/2.3.1/less.min.js" type="text/javascript"></script>
-	    {/if}
+		
+	   	<script src="{$PAGE.ruta}plugins/less.min.js" type="text/javascript"></script>
 	</body>
 </html>

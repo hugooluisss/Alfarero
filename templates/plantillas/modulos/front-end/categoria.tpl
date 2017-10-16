@@ -33,7 +33,7 @@
 						<div class="title-product">
 							{$producto.nombre}
 						</div>
-						<div class="price-product">Q100</div>
+						<div class="price-product">{if count($producto.conceptos)}Q {$producto.conceptos[0].precio}{/if}</div>
 						<div class="button-product">
 							<button type="button" class="add-to-cart" data-toggle="modal" data-target="#winProducto" datos='{json_encode($producto)}'>
 								Agregar a Carrito
