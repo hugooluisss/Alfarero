@@ -10,6 +10,7 @@ class TOrden{
 	public $estado;
 	private $sesion;
 	private $fecha;
+	private $vistas;
 	
 	/**
 	* Constructor de la clase

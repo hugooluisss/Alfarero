@@ -11,7 +11,7 @@ TProducto = function(){
 				"categoria": datos.categoria, 
 				"action": "add"
 			}, function(data){
-				if (data.band == 'false')
+				if (data.band == false)
 					console.log(data.mensaje);
 					
 				if (datos.fn.after !== undefined)
@@ -34,4 +34,20 @@ TProducto = function(){
 			}
 		}, "json");
 	};
+	
+	this.addVisita = function(datos){
+		if (datos.fn.before !== undefined) datos.fn.before();
+		
+		$.post('cproductos', {
+				"id": datos.id,
+				"action": "addVisita"
+			}, function(data){
+				if (data.band == false)
+					console.log(data.mensaje);
+					
+				if (datos.fn.after !== undefined)
+					datos.fn.after(data);
+			}, "json");
+	};
+
 };

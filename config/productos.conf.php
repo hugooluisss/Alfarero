@@ -20,7 +20,7 @@ $conf['listaProductos'] = array(
 $conf['cproductos'] = array(
 	'controlador' => 'productos.php',
 	'descripcion' => 'Controlador de productos',
-	'seguridad' => true,
+	'seguridad' => false,
 	'capa' => LAYOUT_JSON);
 	
 $conf['listaImagenes'] = array(

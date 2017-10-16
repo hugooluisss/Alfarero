@@ -172,5 +172,22 @@ class TProducto{
 		
 		return $rs?true:false;
 	}
+	
+	/**
+	* Cuando el producto tiene un click o una vista el sistema agrega una vista
+	*
+	* @autor Hugo
+	* @access public
+	* @return boolean True si se realizó sin problemas
+	*/
+	public function addVisita(){
+		if ($this->getId() == '') return false;
+		
+		$db = TBase::conectaDB();
+		$sql = "update producto set visitas = visitas + 1 where idProducto = ".$this->getId();
+		$rs = $db->query($sql) or errorMySQL($db, $sql);
+		
+		return $rs?true:false;
+	}
 }
 ?>

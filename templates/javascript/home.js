@@ -10,8 +10,14 @@ $(document).ready(function(){
 	
 	$("#winProducto").on('show.bs.modal', function(e){
 		var producto = jQuery.parseJSON($("#winProducto").attr("datos"));
-		console.log(producto);
 		var win = $("#winProducto");
+		
+		var objProducto = new TProducto;
+		objProducto.addVisita({
+			"id": producto.idProducto,
+			fn: {}
+		});
+		
 		$.each(producto, function(campo, valor){
 			win.find("[campo=" + campo + "]").text(valor);
 		});

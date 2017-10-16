@@ -79,6 +79,10 @@ switch($objModulo->getId()){
 			case 'eliminarImagen':
 				$smarty->assign("json", array("band" => unlink($_POST['imagen'])));
 			break;
+			case 'addVisita':
+				$obj = new TProducto($_POST['id']);
+				$smarty->assign("json", array("band" => $obj->addVisita()));
+			break;
 		}
 	break;
 }
