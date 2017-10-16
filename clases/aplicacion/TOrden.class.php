@@ -144,7 +144,7 @@ class TOrden{
 			$rs = $db->query($sql) or errorMySQL($db, $sql);;
 			if (!$rs) return false;
 			
-			$this->idEstado = $db->insert_id;
+			$this->idOrden = $db->insert_id;
 		}
 		
 		if ($this->getId() == '')

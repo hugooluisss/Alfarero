@@ -66,11 +66,14 @@
 							<a class="nav-link" href="#">Dona</a>
 						</li>
 					</ul>
-					<div class="cart my-2 my-lg-0">
+					<div class="cart my-2 my-lg-0" id="btnCarrito">
 						<i class="fa fa-shopping-cart" aria-hidden="true"></i> carrito <a href="#" class="totalCarrito">({$totalProductosCarrito})</a>
 					</div>
 				</div>
 			</nav>
+			
+			<div id="panelCarrito">
+			</div>
 		</header>
 		
 		{if $PAGE.vista neq ''}

@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.11, created on 2017-10-15 21:19:02
+<?php /* Smarty version Smarty-3.1.11, created on 2017-10-16 12:12:34
          compiled from "templates/plantillas/layout/tarjetas.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:186517482459d301893976b2-14581153%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'b59ba1a67c523908e0c660ac764cb7228d7d9c5e' => 
     array (
       0 => 'templates/plantillas/layout/tarjetas.tpl',
-      1 => 1508120321,
+      1 => 1508172941,
       2 => 'file',
     ),
   ),
@@ -102,12 +102,15 @@ tarjetas/images/logo.png" alt="Logo Alfarero">
 							<a class="nav-link" href="#">Dona</a>
 						</li>
 					</ul>
-					<div class="cart my-2 my-lg-0">
+					<div class="cart my-2 my-lg-0" id="btnCarrito">
 						<i class="fa fa-shopping-cart" aria-hidden="true"></i> carrito <a href="#" class="totalCarrito">(<?php echo $_smarty_tpl->tpl_vars['totalProductosCarrito']->value;?>
 )</a>
 					</div>
 				</div>
 			</nav>
+			
+			<div id="panelCarrito">
+			</div>
 		</header>
 		
 		<?php if ($_smarty_tpl->tpl_vars['PAGE']->value['vista']!=''){?>

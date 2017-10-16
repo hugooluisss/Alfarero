@@ -1,4 +1,8 @@
 $(document).ready(function(){
+	$("#btnCarrito").click(function(){
+		$("#panelCarrito").toggle("slow");
+	});
+
 	$(".add-to-cart").click(function(){
 		var btn = $(this);
 		$("#winProducto").attr("datos", btn.attr("datos"));
@@ -70,6 +74,7 @@ $(document).ready(function(){
 							alert("Todo fue agregado a su carrito");
 							$("#winProducto").modal("hide");
 							$(".totalCarrito").html("(" + resp.totalProductos + ")");
+							updateCarrito();
 						}else
 							alert("Ocurrió un error, no se pudo agregar");
 					}
@@ -77,4 +82,16 @@ $(document).ready(function(){
 			});
 		}
 	});
+	
+	updateCarrito();
+	function updateCarrito(){
+		$("#panelCarrito").html('<i class="fa fa-circle-o-notch fa-spin fa-3x fa-fw"></i><span class="sr-only">Actualizando información...</span>');
+		$.get("contenidoCarrito", function(resp){
+			$("#panelCarrito").html(resp);
+			
+			$("#panelCarrito").find("#btnDonar").click(function(){
+				
+			});
+		});
+	}
 });

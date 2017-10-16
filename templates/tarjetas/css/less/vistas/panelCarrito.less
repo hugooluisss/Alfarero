@@ -1,0 +1,45 @@
+#panelCarrito{
+	background: @panelCarrito-bg;
+	right: 30px;
+	top: 60px;
+	position: fixed;
+	z-index: 9999;
+	
+	width: 400px;
+	padding: 20px 20px 20px 20px;
+	border-radius: 15px;
+	display: none;
+	
+	h6{
+		font-weight: bold;
+	}
+	
+	.panel{
+		background: @panelCarrito-panel-bg;
+		padding: 15px 5px 15px 15px;
+		
+		color: @panelCarrito-panel-color;
+		font-size: 12px;
+		
+		thead{
+			font-size: 13px;
+			font-weight: bold;
+		}
+		
+		tfoot{
+			border-top: 1px solid @panelCarrito-panel-color;
+			font-weight: bold;
+			td:first-child{
+				color: black;
+			}
+		}
+	}
+	
+	.btn-yellow{
+		background: yellow;
+		color: @panelCarrito-panel-color;
+		font-size: 12px;
+		font-weight: bold;
+		cursor: pointer;
+	}
+}
