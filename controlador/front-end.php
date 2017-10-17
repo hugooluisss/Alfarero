@@ -4,11 +4,11 @@ global $objModulo;
 switch($objModulo->getId()){
 	case 'home':
 		$db = TBase::conectaDB();
-		$sql = "select * from categoria";
+		$sql = "select * from categoria where visible = true";
 		$rs = $db->query($sql) or errorMySQL($db, $sql);
 		$datos = array();
 		while($row = $rs->fetch_assoc()){
-			$sql = "select * from producto a where visible = 1 and idCategoria = ".$row['idCategoria'];
+			$sql = "select * from producto a where visible = true and idCategoria = ".$row['idCategoria'];
 			$rs2 = $db->query($sql) or errorMySQL($db, $sql);
 			$row['productos'] = array();
 			
@@ -21,7 +21,7 @@ switch($objModulo->getId()){
 				$rp['imagen'] = $archivos;
 				
 				#por cada producto se buscan sus conceptos
-				$sql = "select * from concepto a where visible = 1 and idProducto = ".$rp['idProducto'];
+				$sql = "select * from concepto a where visible = true and idProducto = ".$rp['idProducto'];
 				$rs3 = $db->query($sql) or errorMySQL($db, $sql);
 				$rp['conceptos'] = array();
 				

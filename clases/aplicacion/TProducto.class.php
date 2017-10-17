@@ -145,8 +145,8 @@ class TProducto{
 		$sql = "UPDATE producto
 			SET
 				idCategoria = ".$this->categoria->getId().",
-				nombre = '".mysql_real_escape_string($this->getNombre())."',
-				descripcion = '".mysql_real_escape_string($this->getDescripcion())."',
+				nombre = '".$this->getNombre()."',
+				descripcion = '".$this->getDescripcion()."',
 				modificacion = now()
 			WHERE idProducto = ".$this->getId();
 			

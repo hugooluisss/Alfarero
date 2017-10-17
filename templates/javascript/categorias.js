@@ -50,7 +50,7 @@ $(document).ready(function(){
 				if(confirm("¿Seguro?")){
 					var obj = new TCategoria;
 					obj.del({
-						id: $(this).attr("categoria"), 
+						id: $(this).attr("identificador"), 
 						fn: {
 							after: function(data){
 								getLista();

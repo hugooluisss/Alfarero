@@ -162,8 +162,8 @@ class TCategoria{
 		$sql = "UPDATE categoria
 			SET
 				nombre = '".$this->getNombre()."',
-				vista = '".mysql_real_escape_string($this->getVista())."',
-				referencia = '".mysql_real_escape_string($this->getReferencia())."'
+				vista = '".$this->getVista()."',
+				referencia = '".$this->getReferencia()."'
 			WHERE idCategoria = ".$this->getId();
 			
 		$rs = $db->query($sql) or errorMySQL($db, $sql);

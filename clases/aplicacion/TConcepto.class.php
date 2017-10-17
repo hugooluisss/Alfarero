@@ -163,7 +163,7 @@ class TConcepto{
 		$sql = "UPDATE concepto
 			SET
 				precio = ".$this->getPrecio().",
-				descripcion = '".mysql_real_escape_string($this->getDescripcion())."'
+				descripcion = '".$this->getDescripcion()."'
 			WHERE idConcepto = ".$this->getId();
 			
 		$rs = $db->query($sql) or errorMySQL($db, $sql);
