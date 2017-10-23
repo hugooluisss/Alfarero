@@ -32,6 +32,6 @@
 	</table>
 	<br />
 	<div class="text-right">
-		<button id="btnDonar" class="btn btn-yellow btn-xs">Donar</button>
+		<a href="carrito" class="btn btn-yellow btn-xs">Donar</a>
 	</div>
 </div>

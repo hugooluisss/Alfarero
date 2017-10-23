@@ -78,8 +78,12 @@ nav.navbar.bg-dark{
 	box-shadow:0 0.15em 0.35em 0 rgba(0, 0, 0, 0.133);
 }
 
-.navbar-dark .navbar-toggler{
+.navbar-dark .navbar-toggler, .navbar-dark .navbar-toggler:hover, .navbar-dark .navbar-toggler:focus{
 	border-color:#2141a4;
+}
+
+.navbar-dark .navbar-toggler-icon{
+	background-image:url("data:image/svg+xml;charset=utf8,%3Csvg viewBox=\'0 0 30 30\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cpath stroke=\'rgba(33, 65, 164, 0.9)\' stroke-width=\'2\' stroke-linecap=\'round\' stroke-miterlimit=\'10\' d=\'M4 7h22M4 15h22M4 23h22\'/%3E%3C/svg%3E");
 }
 
 .navbar-brand{
@@ -285,10 +289,106 @@ button.add-to-cart:hover{
 	color:#fff;
 }
 
-/*****Animated Required*****/	
-.hidden-animated{
-     opacity:0;
+/*****CARRITO*****/
+.mi-carrito .title-wrap{
+	border-bottom:4px dotted #00979d;
+	margin:50px 0;
 }
-.visible-animated{
-     opacity:1;
+
+.mi-carrito h3{
+	color:#00979d;
+	font-family:inherit;
+	text-transform:none;
+	margin-bottom:10px;
+}
+
+.detalle-head{
+	color:#f67e1f;
+	font-weight:700;
+	padding:20px 0;
+}
+
+.detalle-item{
+	padding:8px 0;
+}
+
+.cantidad, .precio, .subtotal{
+	text-align:center;
+}
+
+.detalle-total{
+	border-top:2px solid #00979d;
+	padding:10px 0;
+	margin-top:10px;
+	text-align:center;
+}
+
+.total{
+	color:#f67e1f;
+	font-weight:700;
+}
+
+.form{
+	background-image:url(../images/elements/bg-form.jpg);
+	background-position:center top;
+	background-repeat:no-repeat;
+	background-size:cover;
+	padding:80px 0;
+	margin-top:40px;
+}
+
+.form-wrap{
+	background-image:url(../images/elements/bg-wrap-form.png);
+	padding:20px 40px 40px;
+}
+
+.form-wrap h2, .confirmar-wrap h2{
+	background:none;
+	color:#009640;
+	font-family:inherit;
+	font-size:24px;
+	font-weight:700;
+	text-transform:none;
+	padding-left:0;
+	margin:20px 0;
+}
+
+.wrap-input{
+	font-size:14px;
+	padding:8px 0;
+}
+
+.txt-input{
+	font-weight:700;
+}
+
+.wrap-confirmar-total{
+	background:#002597;
+	color:#fff;
+	font-weight:700;
+	padding:15px 30px 15px;
+	text-align:right;
+	margin:30px 0;
+}
+
+.wrap-donar-button{
+	background:url(../images/elements/arrow-dotted.png) no-repeat right;
+	text-align:right;
+	padding-right:80px;
+	margin-bottom:80px;
+}
+
+button.donar, button.guardar{
+	background:#ffde00;
+	border:0;
+	color:#002596;
+	display:inline-block;
+	font-weight:600;
+	padding:10px 15px;
+}
+
+button.donar:hover, button.guardar:hover{
+	opacity:0.8;
+	text-decoration:none;
+	cursor:pointer;
 }

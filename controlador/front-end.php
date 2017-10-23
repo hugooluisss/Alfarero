@@ -1,5 +1,7 @@
 <?php
 global $objModulo;
+$orden = new TOrden;
+$smarty->assign("totalProductosCarrito", $orden->getTotalProductos());
 
 switch($objModulo->getId()){
 	case 'home':
@@ -35,8 +37,22 @@ switch($objModulo->getId()){
 		}
 		
 		$smarty->assign("categorias", $datos);
+	break;
+	case 'carrito':
+		$obj = new TOrden;
 		
-		$orden = new TOrden;
-		$smarty->assign("totalProductosCarrito", $orden->getTotalProductos());
+		$datos = array();
+		if($obj->getId() <> ''){
+			$db = TBase::conectaDB();
+			$sql = "select * from movimiento a join concepto b using(idConcepto) where idOrden = ".$obj->getId();
+			$rs = $db->query($sql) or errorMySQL($db, $sql);
+			
+			while($row = $rs->fetch_assoc()){
+				$row['json'] = json_encode($row);
+				
+				array_push($datos, $row);
+			}
+		}
+		$smarty->assign("carrito", $datos);
 	break;
 }
