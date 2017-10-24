@@ -16,6 +16,7 @@ switch($objModulo->getId()){
 				array_push($datos, $row);
 			}
 		}
+		
 		$smarty->assign("conceptos", $datos);
 	break;
 	case 'cordenes':

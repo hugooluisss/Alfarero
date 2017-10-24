@@ -17,6 +17,13 @@ $(document).ready(function(){
 			});
 		});
 		
+		var form = $("#frmTarjeta");
+		$("#payment-form").find("[name=ccnumber]").val(form.find("[name=numerotarjeta]").val());
+		var anio = form.find("[name=exano]").val();
+		anio = anio[2] + anio[3];
+		$("#payment-form").find("[name=ccexp]").val(form.find("[name=exmes]").val() + anio);
+		$("#payment-form").find("[name=cvv]").val(form.find("[name=cvv]").val());
+		$("#payment-form").find("[name=checkname]").val(form.find("[name=nombreapellido]").val());
 		return false;
 	});
 });

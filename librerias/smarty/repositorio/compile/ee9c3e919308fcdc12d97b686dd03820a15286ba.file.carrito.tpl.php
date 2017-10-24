@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.11, created on 2017-10-22 20:05:51
+<?php /* Smarty version Smarty-3.1.11, created on 2017-10-23 22:20:31
          compiled from "templates/plantillas/modulos/front-end/carrito.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:122368470159ed10805065c0-52236951%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'ee9c3e919308fcdc12d97b686dd03820a15286ba' => 
     array (
       0 => 'templates/plantillas/modulos/front-end/carrito.tpl',
-      1 => 1508720750,
+      1 => 1508815127,
       2 => 'file',
     ),
   ),
@@ -23,6 +23,10 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'carrito' => 0,
     'total' => 0,
     'row' => 0,
+    'orden' => 0,
+    'hash' => 0,
+    'hora' => 0,
+    'key_id' => 0,
   ),
   'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
@@ -103,7 +107,8 @@ $_smarty_tpl->tpl_vars["row"]->_loop = true;
 					Total:
 				</div>
 				<div class="col-md-2">
-					Q650
+					Q <?php echo $_smarty_tpl->tpl_vars['orden']->value->getMontoTotal();?>
+
 				</div>
 			</div>
 		</div>   
@@ -200,8 +205,10 @@ $_smarty_tpl->tpl_vars["row"]->_loop = true;
 							<input name="cvv" type="text" required="true" value="987"/>
 						</div>
 					</div>
-
-					<button type="submit" class="guardar">Guardar</button>
+					
+					<?php if ($_smarty_tpl->tpl_vars['orden']->value->getId()!=''){?>
+						<button type="submit" class="guardar">Guardar</button>
+					<?php }?>
 				</form>
 			</div>
 		</div>
@@ -271,11 +278,35 @@ $_smarty_tpl->tpl_vars["row"]->_loop = true;
 				</div>
 			</div>
 			<div class="wrap-confirmar-total">
-				Cantidad a Donar: Q650
+				Cantidad a Donar: Q <?php echo $_smarty_tpl->tpl_vars['orden']->value->getMontoTotal();?>
+
 			</div>
 			<div class="wrap-donar-button">
-				<button class="donar">Donar</button>
+				<form id="payment-form" name="CredomaticPost" action="https://paycom.credomatic.com/PayComBackEndWeb/common/requestPaycomService.go" method="post" novalidate="novalidate">
+					<input type="text" name="hash" value="<?php echo $_smarty_tpl->tpl_vars['hash']->value;?>
+" id="hash">
+					<input type="text" name="time" value="<?php echo $_smarty_tpl->tpl_vars['hora']->value;?>
+" id="time">
+					<input type="text" name="checkname" id="checkname" value="">
+					<input type="text" name="ccnumber" id="ccnumber" value="">
+					<input type="text" name="ccexp" id="ccexp" value="">
+					<input type="text" name="amount" value="<?php echo $_smarty_tpl->tpl_vars['orden']->value->getMontoTotal();?>
+" id="amount">
+					<input type="text" name="type" value="sale" id="type">
+					<input type="text" name="orderid" value="<?php echo $_smarty_tpl->tpl_vars['orden']->value->getId();?>
+" id="orderid">
+					<input type="text" name="key_id" value="<?php echo $_smarty_tpl->tpl_vars['key_id']->value;?>
+" id="key_id">
+					<input type="text" name="cvv" id="cvv" value="">
+					<input type="text" name="redirect" value="<?php echo $_smarty_tpl->tpl_vars['PAGE']->value['url'];?>
+validarPago" id="redirect">
+					
+					<button type="submit" class="donar">Donar</button>
+				</form>
 			</div>
 		</div>
 	</section>
+	
+	
+	
 </div><?php }} ?>

@@ -54,5 +54,14 @@ switch($objModulo->getId()){
 			}
 		}
 		$smarty->assign("carrito", $datos);
+		$smarty->assign("orden", $obj);
+		
+		#Los datos para generar el hash
+		global $ini;
+		$hora = time();
+		$hash = $obj->getId()."|".$obj->getMontoTotal()."|".$hora."|".$ini['banco']['key'];
+		$smarty->assign("hash", md5($hash));
+		$smarty->assign("hora", $hora);
+		$smarty->assign("key_id", $ini['banco']['key_id']);
 	break;
 }

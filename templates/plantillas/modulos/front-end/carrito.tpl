@@ -62,7 +62,7 @@
 					Total:
 				</div>
 				<div class="col-md-2">
-					Q{$row.total}
+					Q {$orden->getMontoTotal()}
 				</div>
 			</div>
 		</div>   
@@ -159,8 +159,10 @@
 							<input name="cvv" type="text" required="true" value="987"/>
 						</div>
 					</div>
-
-					<button type="submit" class="guardar">Guardar</button>
+					
+					{if $orden->getId() neq ''}
+						<button type="submit" class="guardar">Guardar</button>
+					{/if}
 				</form>
 			</div>
 		</div>
@@ -230,30 +232,28 @@
 				</div>
 			</div>
 			<div class="wrap-confirmar-total">
-				Cantidad a Donar: Q
+				Cantidad a Donar: Q {$orden->getMontoTotal()}
 			</div>
 			<div class="wrap-donar-button">
-				<button class="donar">Donar</button>
+				<form id="payment-form" name="CredomaticPost" action="https://paycom.credomatic.com/PayComBackEndWeb/common/requestPaycomService.go" method="post" novalidate="novalidate">
+					<input type="text" name="hash" value="{$hash}" id="hash">
+					<input type="text" name="time" value="{$hora}" id="time">
+					<input type="text" name="checkname" id="checkname" value="">
+					<input type="text" name="ccnumber" id="ccnumber" value="">
+					<input type="text" name="ccexp" id="ccexp" value="">
+					<input type="text" name="amount" value="{$orden->getMontoTotal()}" id="amount">
+					<input type="text" name="type" value="sale" id="type">
+					<input type="text" name="orderid" value="{$orden->getId()}" id="orderid">
+					<input type="text" name="key_id" value="{$key_id}" id="key_id">
+					<input type="text" name="cvv" id="cvv" value="">
+					<input type="text" name="redirect" value="{$PAGE.url}validarPago" id="redirect">
+					
+					<button type="submit" class="donar">Donar</button>
+				</form>
 			</div>
 		</div>
 	</section>
 	
 	
-	<form id="payment-form" name="CredomaticPost" action="https://paycom.credomatic.com/PayComBackEndWeb/common/requestPaycomService.go" method="post" novalidate="novalidate">
-		<!-- Hash: md5("10|1.00|1343361045|{El numero largo del key}"); -->
-		<input type="hidden" name="hash" value="{md5($total)}" id="hash">
-		<input type="hidden" name="username" value="">
-		<!-- Time: Thu Jul 26 2012 21:50:45 GMT-6 -->
-		<input type="hidden" name="time" value="1343361045" id="time">
-		<input type="text" name="ccnumber" id="ccnumber" value="4012001011000771" class="valid">
-		<input type="text" name="ccexp" id="ccexp" value="1219">
-		<input type="hidden" name="amount" value="1.00" id="amount">
-		<input type="hidden" name="type" value="auth" id="type">
-		<input type="hidden" name="orderid" value="10" id="orderid">
-		<input type="hidden" name="key_id" value="2476497" id="key_id">
-		<input type="hidden" name="processor_id" value="">
-		<input type="text" name="cvv" id="cvv" value="">
-		<input type="hidden" name="redirect" value="{$PAGE.url}/validarPago" id="redirect">
-		<input type="submit" name="edSubmit" value="Pagar">
-	</form>
+	
 </div>

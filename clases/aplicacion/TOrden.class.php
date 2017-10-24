@@ -228,5 +228,23 @@ class TOrden{
 		
 		return $row['total'] == ''?0:$row['total'];
 	}
+	
+	/**
+	* Retorna el total
+	*
+	* @autor Hugo
+	* @access public
+	* @return boolean True si se realizó sin problemas
+	*/
+	public function getMontoTotal(){
+		if ($this->getId() == '') return 0;
+		
+		$db = TBase::conectaDB();
+		$sql = "select sum(cantidad * precio) as total from movimiento where idOrden = ".$this->getId();
+		$rs = $db->query($sql) or errorMySQL($db, $sql);
+		$row = $rs->fetch_assoc();
+		
+		return $row['total'] == ''?0:$row['total'];
+	}
 }
 ?>
