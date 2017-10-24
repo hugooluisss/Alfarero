@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.11, created on 2017-10-13 08:51:08
+<?php /* Smarty version Smarty-3.1.11, created on 2017-10-24 12:18:34
          compiled from "templates/plantillas/modulos/categorias/lista.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:109301712859d1a32d569582-00067023%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '07f82453fd30ed3ffbd38108a3098e7877fa57f6' => 
     array (
       0 => 'templates/plantillas/modulos/categorias/lista.tpl',
-      1 => 1507902390,
+      1 => 1508266528,
       2 => 'file',
     ),
   ),
@@ -45,7 +45,7 @@ $_smarty_tpl->tpl_vars["row"]->_loop = true;
 						<td style="text-align: right">
 							<button type="button" class="btn btn-primary btn-xs" action="modificar" title="Modificar" datos='<?php echo $_smarty_tpl->tpl_vars['row']->value['json'];?>
 '><i class="fa fa-edit"></i></button>
-							<button type="button" class="btn btn-danger btn-xs" action="eliminar" title="Eliminar" usuario="<?php echo $_smarty_tpl->tpl_vars['row']->value['idCategoria'];?>
+							<button type="button" class="btn btn-danger btn-xs" action="eliminar" title="Eliminar" identificador="<?php echo $_smarty_tpl->tpl_vars['row']->value['idCategoria'];?>
 "><i class="fa fa-times"></i></button>
 						</td>
 					</tr>

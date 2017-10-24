@@ -72,7 +72,7 @@
 	<section class="form">
 		<div class="container">
 			<div class="col-md-6 form-wrap" id="frmTarjeta">
-				<form action="confirmar.php" method="">
+				<form action="carrito" method="?">
 					<h2>Información de Contacto</h2>
     
 					<div class="row wrap-input nombre">
@@ -109,7 +109,7 @@
 							Numero de Tarjeta
 						</div>
 						<div class="col-md-8">
-							<input name="numerotarjeta" type="text" required="true" value="4111411141114111"/>
+							<input name="numerotarjeta" type="text" required="true" value="4111111111111111"/>
 						</div>
 					</div>
 
@@ -159,7 +159,7 @@
 							<input name="cvv" type="text" required="true" value="987"/>
 						</div>
 					</div>
-					
+					<div id="g-recaptcha"></div>
 					{if $orden->getId() neq ''}
 						<button type="submit" class="guardar">Guardar</button>
 					{/if}
@@ -235,18 +235,18 @@
 				Cantidad a Donar: Q {$orden->getMontoTotal()}
 			</div>
 			<div class="wrap-donar-button">
-				<form id="payment-form" name="CredomaticPost" action="https://paycom.credomatic.com/PayComBackEndWeb/common/requestPaycomService.go" method="post" novalidate="novalidate">
-					<input type="text" name="hash" value="{$hash}" id="hash">
-					<input type="text" name="time" value="{$hora}" id="time">
-					<input type="text" name="checkname" id="checkname" value="">
-					<input type="text" name="ccnumber" id="ccnumber" value="">
-					<input type="text" name="ccexp" id="ccexp" value="">
-					<input type="text" name="amount" value="{$orden->getMontoTotal()}" id="amount">
-					<input type="text" name="type" value="sale" id="type">
-					<input type="text" name="orderid" value="{$orden->getId()}" id="orderid">
-					<input type="text" name="key_id" value="{$key_id}" id="key_id">
-					<input type="text" name="cvv" id="cvv" value="">
-					<input type="text" name="redirect" value="{$PAGE.url}validarPago" id="redirect">
+				<form id="payment-form" name="CredomaticPost" action="https://credomatic.compassmerchantsolutions.com/api/transact.php" method="post" novalidate="novalidate">
+					<input type="hidden" name="hash" value="{$hash}" id="hash">
+					<input type="hidden" name="time" value="{$hora}" id="time">
+					<input type="hidden" name="checkname" id="checkname" value="">
+					<input type="hidden" name="ccnumber" id="ccnumber" value="">
+					<input type="hidden" name="ccexp" id="ccexp" value="">
+					<input type="hidden" name="amount" value="{$orden->getMontoTotal()}" id="amount">
+					<input type="hidden" name="type" value="sale" id="type">
+					<input type="hidden" name="orderid" value="{$orden->getId()}" id="orderid">
+					<input type="hidden" name="key_id" value="{$key_id}" id="key_id">
+					<input type="hidden" name="cvv" id="cvv" value="">
+					<input type="hidden" name="redirect" value="{$PAGE.url}validarPago" id="redirect">
 					
 					<button type="submit" class="donar">Donar</button>
 				</form>
@@ -255,5 +255,5 @@
 	</section>
 	
 	
-	
+	 <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit" async defer></script>
 </div>

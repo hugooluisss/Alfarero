@@ -29,6 +29,7 @@ switch($objModulo->getId()){
 					
 				$smarty->assign("json", array("band" => true, "totalProductos" => $obj->getTotalProductos()));
 			break;
+			/*
 			case 'addMovimiento':
 				$obj = new TOrden;
 				
@@ -40,9 +41,18 @@ switch($objModulo->getId()){
 				$band = $obj->guardar();
 				$smarty->assign("json", array("band" => $band, "totalProductos" => $obj->getTotalProductos()));
 			break;
+			*/
 			case 'delMovimiento':
-				$obj = new TCategoria($_POST['id']);
-				$smarty->assign("json", array("band" => $obj->eliminar(), "totalProductos" => $obj->getTotalProductos()));
+				$obj = new TOrden($_POST['id']);
+				#$smarty->assign("json", array("band" => $obj->eliminar(), "totalProductos" => $obj->getTotalProductos()));
+			break;
+			case 'setCliente':
+				$obj = new TOrden;
+				$obj->setCliente($_POST['nombre']);
+				$obj->setTelefono($_POST['telefono']);
+				$obj->setCorreo($_POST['correo']);
+				
+				$smarty->assign("json", array("band" => $obj->guardar()));
 			break;
 		}
 	break;

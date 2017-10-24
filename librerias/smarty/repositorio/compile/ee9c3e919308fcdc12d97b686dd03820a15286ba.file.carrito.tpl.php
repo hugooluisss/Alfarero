@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.11, created on 2017-10-23 22:20:31
+<?php /* Smarty version Smarty-3.1.11, created on 2017-10-24 12:27:43
          compiled from "templates/plantillas/modulos/front-end/carrito.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:122368470159ed10805065c0-52236951%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'ee9c3e919308fcdc12d97b686dd03820a15286ba' => 
     array (
       0 => 'templates/plantillas/modulos/front-end/carrito.tpl',
-      1 => 1508815127,
+      1 => 1508860657,
       2 => 'file',
     ),
   ),
@@ -118,7 +118,7 @@ $_smarty_tpl->tpl_vars["row"]->_loop = true;
 	<section class="form">
 		<div class="container">
 			<div class="col-md-6 form-wrap" id="frmTarjeta">
-				<form action="confirmar.php" method="">
+				<form action="carrito" method="?">
 					<h2>Información de Contacto</h2>
     
 					<div class="row wrap-input nombre">
@@ -155,7 +155,7 @@ $_smarty_tpl->tpl_vars["row"]->_loop = true;
 							Numero de Tarjeta
 						</div>
 						<div class="col-md-8">
-							<input name="numerotarjeta" type="text" required="true" value="4111411141114111"/>
+							<input name="numerotarjeta" type="text" required="true" value="4111111111111111"/>
 						</div>
 					</div>
 
@@ -205,7 +205,7 @@ $_smarty_tpl->tpl_vars["row"]->_loop = true;
 							<input name="cvv" type="text" required="true" value="987"/>
 						</div>
 					</div>
-					
+					<div id="g-recaptcha"></div>
 					<?php if ($_smarty_tpl->tpl_vars['orden']->value->getId()!=''){?>
 						<button type="submit" class="guardar">Guardar</button>
 					<?php }?>
@@ -282,23 +282,23 @@ $_smarty_tpl->tpl_vars["row"]->_loop = true;
 
 			</div>
 			<div class="wrap-donar-button">
-				<form id="payment-form" name="CredomaticPost" action="https://paycom.credomatic.com/PayComBackEndWeb/common/requestPaycomService.go" method="post" novalidate="novalidate">
-					<input type="text" name="hash" value="<?php echo $_smarty_tpl->tpl_vars['hash']->value;?>
+				<form id="payment-form" name="CredomaticPost" action="https://credomatic.compassmerchantsolutions.com/api/transact.php" method="post" novalidate="novalidate">
+					<input type="hidden" name="hash" value="<?php echo $_smarty_tpl->tpl_vars['hash']->value;?>
 " id="hash">
-					<input type="text" name="time" value="<?php echo $_smarty_tpl->tpl_vars['hora']->value;?>
+					<input type="hidden" name="time" value="<?php echo $_smarty_tpl->tpl_vars['hora']->value;?>
 " id="time">
-					<input type="text" name="checkname" id="checkname" value="">
-					<input type="text" name="ccnumber" id="ccnumber" value="">
-					<input type="text" name="ccexp" id="ccexp" value="">
-					<input type="text" name="amount" value="<?php echo $_smarty_tpl->tpl_vars['orden']->value->getMontoTotal();?>
+					<input type="hidden" name="checkname" id="checkname" value="">
+					<input type="hidden" name="ccnumber" id="ccnumber" value="">
+					<input type="hidden" name="ccexp" id="ccexp" value="">
+					<input type="hidden" name="amount" value="<?php echo $_smarty_tpl->tpl_vars['orden']->value->getMontoTotal();?>
 " id="amount">
-					<input type="text" name="type" value="sale" id="type">
-					<input type="text" name="orderid" value="<?php echo $_smarty_tpl->tpl_vars['orden']->value->getId();?>
+					<input type="hidden" name="type" value="sale" id="type">
+					<input type="hidden" name="orderid" value="<?php echo $_smarty_tpl->tpl_vars['orden']->value->getId();?>
 " id="orderid">
-					<input type="text" name="key_id" value="<?php echo $_smarty_tpl->tpl_vars['key_id']->value;?>
+					<input type="hidden" name="key_id" value="<?php echo $_smarty_tpl->tpl_vars['key_id']->value;?>
 " id="key_id">
-					<input type="text" name="cvv" id="cvv" value="">
-					<input type="text" name="redirect" value="<?php echo $_smarty_tpl->tpl_vars['PAGE']->value['url'];?>
+					<input type="hidden" name="cvv" id="cvv" value="">
+					<input type="hidden" name="redirect" value="<?php echo $_smarty_tpl->tpl_vars['PAGE']->value['url'];?>
 validarPago" id="redirect">
 					
 					<button type="submit" class="donar">Donar</button>
@@ -308,5 +308,5 @@ validarPago" id="redirect">
 	</section>
 	
 	
-	
+	 <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit" async defer></script>
 </div><?php }} ?>

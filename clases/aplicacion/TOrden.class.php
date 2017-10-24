@@ -10,7 +10,9 @@ class TOrden{
 	public $estado;
 	private $sesion;
 	private $fecha;
-	private $vistas;
+	private $cliente;
+	private $telefono;
+	private $correo;
 	
 	/**
 	* Constructor de la clase
@@ -54,7 +56,7 @@ class TOrden{
 		foreach($rs->fetch_assoc() as $field => $val){
 			switch($field){
 				case 'idEstado':
-					$this->estado = new TEstado;
+					$this->estado = new TEstado($val);
 				break;
 				default:
 					$this->$field = $val;
@@ -130,6 +132,84 @@ class TOrden{
 	}
 	
 	/**
+	* Establece el nombre del cliente
+	*
+	* @autor Hugo
+	* @access public
+	* @param string $val Valor a asignar
+	* @return boolean True si se realizó sin problemas
+	*/
+	
+	public function setCliente($val = ''){
+		$this->cliente = $val;
+		return true;
+	}
+	
+	/**
+	* Retorna el nombre del cliente
+	*
+	* @autor Hugo
+	* @access public
+	* @return string Texto
+	*/
+	
+	public function getCliente(){
+		return $this->cliente;
+	}
+	
+	/**
+	* Establece el telefono
+	*
+	* @autor Hugo
+	* @access public
+	* @param string $val Valor a asignar
+	* @return boolean True si se realizó sin problemas
+	*/
+	
+	public function setTelefono($val = ''){
+		$this->telefono = $val;
+		return true;
+	}
+	
+	/**
+	* Retorna el telefono
+	*
+	* @autor Hugo
+	* @access public
+	* @return string Texto
+	*/
+	
+	public function getTelefono(){
+		return $this->telefono;
+	}
+	
+	/**
+	* Establece el correo del cliente
+	*
+	* @autor Hugo
+	* @access public
+	* @param string $val Valor a asignar
+	* @return boolean True si se realizó sin problemas
+	*/
+	
+	public function setCorreo($val = ''){
+		$this->correo = $val;
+		return true;
+	}
+	
+	/**
+	* Retorna el correo
+	*
+	* @autor Hugo
+	* @access public
+	* @return string Texto
+	*/
+	
+	public function getCorreo(){
+		return $this->correo;
+	}
+	
+	/**
 	* Guarda los datos en la base de datos, si no existe un identificador entonces crea el objeto
 	*
 	* @autor Hugo
@@ -141,7 +221,7 @@ class TOrden{
 		
 		if ($this->getId() == ''){
 			$this->setSesion(session_id());
-			$sql = "INSERT INTO orden(idEstado, sesion, fecha) VALUES('".$this->estado->getId()."', '".$this->getSesion()."', '".$this->getFecha()."');";
+			$sql = "INSERT INTO orden(idEstado, sesion, fecha) VALUES('".$this->estado->getId()."', '".$this->getSesion()."', now());";
 			$rs = $db->query($sql) or errorMySQL($db, $sql);;
 			if (!$rs) return false;
 			
@@ -153,7 +233,10 @@ class TOrden{
 		
 		$sql = "UPDATE orden
 			SET
-				idEstado = ".$this->estado->getId()."
+				idEstado = ".$this->estado->getId().",
+				cliente = '".$this->getCliente()."',
+				telefono = '".$this->getTelefono()."',
+				correo = '".$this->getCorreo()."'
 			WHERE idOrden = ".$this->getId();
 			
 		$rs = $db->query($sql) or errorMySQL($db, $sql);

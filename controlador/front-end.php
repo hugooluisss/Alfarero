@@ -64,4 +64,15 @@ switch($objModulo->getId()){
 		$smarty->assign("hora", $hora);
 		$smarty->assign("key_id", $ini['banco']['key_id']);
 	break;
+	case 'validarPago':
+		foreach($_GET as $key => $resp)
+			$smarty->assign("get_".$key, $resp);
+			
+		if ($_GET["response"] == 1){
+			$obj = new TOrden($_GET['orderid']);
+			
+			$obj->estado->setId(2);
+			$obj->guardar();
+		}
+	break;
 }

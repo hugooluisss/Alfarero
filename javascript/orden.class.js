@@ -1,6 +1,6 @@
 TOrden = function(){
 	var self = this;
-	
+	/*
 	this.addMov = function(datos){
 		if (datos.fn.before !== undefined) datos.fn.before();
 		
@@ -16,7 +16,7 @@ TOrden = function(){
 					datos.fn.after(data);
 			}, "json");
 	};
-	
+	*/
 	this.addMovs = function(datos){
 		if (datos.fn.before !== undefined) datos.fn.before();
 		$.post('cordenes', {
@@ -43,6 +43,24 @@ TOrden = function(){
 				
 			if (data.band == false){
 				alert("Ocurrió un error al eliminar");
+			}
+		}, "json");
+	};
+	
+	this.setCliente = function(datos){
+		if (datos.fn.before !== undefined) datos.fn.before();
+		
+		$.post('cordenes', {
+			"nombre": datos.nombre,
+			"telefono": datos.telefono,
+			"correo": datos.correo,
+			"action": "setCliente"
+		}, function(data){
+			if (datos.fn.after != undefined)
+				datos.fn.after(data);
+				
+			if (data.band == false){
+				console.log("Ocurrió un error");
 			}
 		}, "json");
 	};

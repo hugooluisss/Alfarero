@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.11, created on 2017-10-22 16:31:33
+<?php /* Smarty version Smarty-3.1.11, created on 2017-10-24 12:27:17
          compiled from "templates/plantillas/layout/tarjetas.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:186517482459d301893976b2-14581153%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'b59ba1a67c523908e0c660ac764cb7228d7d9c5e' => 
     array (
       0 => 'templates/plantillas/layout/tarjetas.tpl',
-      1 => 1508180542,
+      1 => 1508855955,
       2 => 'file',
     ),
   ),
@@ -66,7 +66,7 @@ dist/css/font-awesome.min.css">
 	<body>
 		<header>
 			<nav class="navbar navbar-dark bg-dark fixed-top navbar-expand-lg">
-				<a class="navbar-brand" href="/beta">
+				<a class="navbar-brand" href="home">
 					<img src="<?php echo $_smarty_tpl->tpl_vars['PAGE']->value['ruta'];?>
 tarjetas/images/logo.png" alt="Logo Alfarero">
 				</a>
