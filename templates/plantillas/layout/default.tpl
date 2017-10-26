@@ -127,6 +127,15 @@
 							<li {if $PAGE.modulo eq 'productos'}class="active"{/if}><a href="productos">Productos</a></li>
 						</ul>
 					</li>
+					<li class="{if in_array($PAGE.modulo, array('ordenes'))}active{/if} treeview">
+						<a href="#">
+							<i class="fa fa-file-text-o" aria-hidden="true"></i>
+							<span>Donaciones</span> <i class="fa fa-angle-left pull-right"></i>
+						</a>
+						<ul class="treeview-menu">
+							<li {if $PAGE.modulo eq 'ordenes'}class="active"{/if}><a href="ordenes">Ordenes</a></li>
+						</ul>
+					</li>
 					{/if}
 				</ul>
 			</section>

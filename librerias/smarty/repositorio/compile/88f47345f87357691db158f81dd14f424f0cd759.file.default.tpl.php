@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.11, created on 2017-10-24 12:15:16
+<?php /* Smarty version Smarty-3.1.11, created on 2017-10-26 12:59:24
          compiled from "templates/plantillas/layout/default.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:107131609959d1986533c0a8-19849362%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '88f47345f87357691db158f81dd14f424f0cd759' => 
     array (
       0 => 'templates/plantillas/layout/default.tpl',
-      1 => 1508161372,
+      1 => 1509040761,
       2 => 'file',
     ),
   ),
@@ -174,6 +174,15 @@ img/logo.png" alt="User Image" style="background: white"/>
 						<ul class="treeview-menu">
 							<li <?php if ($_smarty_tpl->tpl_vars['PAGE']->value['modulo']=='categorias'){?>class="active"<?php }?>><a href="categorias">Categorías</a></li>
 							<li <?php if ($_smarty_tpl->tpl_vars['PAGE']->value['modulo']=='productos'){?>class="active"<?php }?>><a href="productos">Productos</a></li>
+						</ul>
+					</li>
+					<li class="<?php if (in_array($_smarty_tpl->tpl_vars['PAGE']->value['modulo'],array('ordenes'))){?>active<?php }?> treeview">
+						<a href="#">
+							<i class="fa fa-file-text-o" aria-hidden="true"></i>
+							<span>Donaciones</span> <i class="fa fa-angle-left pull-right"></i>
+						</a>
+						<ul class="treeview-menu">
+							<li <?php if ($_smarty_tpl->tpl_vars['PAGE']->value['modulo']=='ordenes'){?>class="active"<?php }?>><a href="ordenes">Ordenes</a></li>
 						</ul>
 					</li>
 					<?php }?>

@@ -19,6 +19,20 @@ switch($objModulo->getId()){
 		
 		$smarty->assign("conceptos", $datos);
 	break;
+	case 'listaOrdenes':
+		$db = TBase::conectaDB();
+		global $sesion;
+		$sql = "select a.*, b.color, b.nombre as estado from orden a join estado b using(idEstado)";
+		$rs = $db->query($sql) or errorMySQL($db, $sql);
+		$datos = array();
+		while($row = $rs->fetch_assoc()){
+			$row['json'] = json_encode($row);
+			
+			array_push($datos, $row);
+		}
+		
+		$smarty->assign("lista", $datos);
+	break;
 	case 'cordenes':
 		switch($objModulo->getAction()){
 			case 'addMovimientos':
@@ -53,6 +67,19 @@ switch($objModulo->getId()){
 				$obj->setCorreo($_POST['correo']);
 				
 				$smarty->assign("json", array("band" => $obj->guardar()));
+			break;
+			case 'imprimir':
+				#se genera el documento pdf
+				global $userSesion;
+				require_once(getcwd()."/repositorio/pdf/orden.php");
+				$orden = $_GET['id'];
+				$db = TBase::conectaDB();
+				
+				$pdf = new ROrden();
+				$pdf->generar($orden);
+				
+				$documento = $pdf->output();
+				header('Location: '.$documento);
 			break;
 		}
 	break;
