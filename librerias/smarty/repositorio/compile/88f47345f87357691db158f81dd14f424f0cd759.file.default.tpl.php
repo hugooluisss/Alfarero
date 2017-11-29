@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.11, created on 2017-10-26 12:59:24
+<?php /* Smarty version Smarty-3.1.11, created on 2017-11-28 13:55:33
          compiled from "templates/plantillas/layout/default.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:107131609959d1986533c0a8-19849362%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '88f47345f87357691db158f81dd14f424f0cd759' => 
     array (
       0 => 'templates/plantillas/layout/default.tpl',
-      1 => 1509040761,
+      1 => 1511898590,
       2 => 'file',
     ),
   ),
@@ -156,17 +156,18 @@ img/logo.png" alt="User Image" style="background: white"/>
 				<ul class="sidebar-menu">
 					<li class="header">MENÚ PRINCIPAL</li>
 					<?php if ($_smarty_tpl->tpl_vars['PAGE']->value['usuario']->getPerfil()==1){?>
-					<li class="<?php if (in_array($_smarty_tpl->tpl_vars['PAGE']->value['modulo'],array('usuarios'))){?>active<?php }?> treeview">
+					<li class="<?php if (in_array($_smarty_tpl->tpl_vars['PAGE']->value['modulo'],array('usuarios','secciones'))){?>active<?php }?> treeview">
 						<a href="#">
 							<i class="fa fa-dashboard"></i>
 							<span>Administración</span> <i class="fa fa-angle-left pull-right"></i>
 						</a>
 						<ul class="treeview-menu">
 							<li <?php if ($_smarty_tpl->tpl_vars['PAGE']->value['modulo']=='usuarios'){?>class="active"<?php }?>><a href="usuarios">Usuarios</a></li>
+							<li <?php if ($_smarty_tpl->tpl_vars['PAGE']->value['modulo']=='secciones'){?>class="active"<?php }?>><a href="secciones">Secciones</a></li>
 						</ul>
 					</li>
 					
-					<li class="<?php if (in_array($_smarty_tpl->tpl_vars['PAGE']->value['modulo'],array('categorias','productos'))){?>active<?php }?> treeview">
+					<li class="<?php if (in_array($_smarty_tpl->tpl_vars['PAGE']->value['modulo'],array('categorias','productos','tarjetas'))){?>active<?php }?> treeview">
 						<a href="#">
 							<i class="fa fa-product-hunt" aria-hidden="true"></i>
 							<span>Inventario</span> <i class="fa fa-angle-left pull-right"></i>
@@ -174,6 +175,7 @@ img/logo.png" alt="User Image" style="background: white"/>
 						<ul class="treeview-menu">
 							<li <?php if ($_smarty_tpl->tpl_vars['PAGE']->value['modulo']=='categorias'){?>class="active"<?php }?>><a href="categorias">Categorías</a></li>
 							<li <?php if ($_smarty_tpl->tpl_vars['PAGE']->value['modulo']=='productos'){?>class="active"<?php }?>><a href="productos">Productos</a></li>
+							<li <?php if ($_smarty_tpl->tpl_vars['PAGE']->value['modulo']=='tarjetas'){?>class="active"<?php }?>><a href="tarjetas">Tarjetas de regalo</a></li>
 						</ul>
 					</li>
 					<li class="<?php if (in_array($_smarty_tpl->tpl_vars['PAGE']->value['modulo'],array('ordenes'))){?>active<?php }?> treeview">

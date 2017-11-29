@@ -9,7 +9,7 @@
 * @version    1.0, 1/agosto/2008
 **/
 
-class TMail2{
+class TMailLocal{
 	private $permitir = true;
 	private $destinos;
 	private $origen;
@@ -17,11 +17,11 @@ class TMail2{
 	public $adjuntos;
 	private $tema;
 
-	public function TMail2(){
+	public function TMailLocal(){
 		global $ini;
 		$this->destinos = array();
 		$this->contestarA = "";
-		$this->origen = array("nombre" => "Soporte", "correo" => "soporte@rocketcard.com.mx");
+		$this->origen = array("nombre" => "Casa Alfarero", "correo" => "gracias@alfarero.gits");
 		
 		$this->permitir = true;
 	}

@@ -288,7 +288,7 @@ class TOrden{
 		if ($idConcepto == '') return false;
 		
 		$db = TBase::conectaDB();
-		$sql = "delete from movimiento where idOrden = ".$this->getId()." and idConcepto = ".$objConcepto->getId();
+		$sql = "delete from movimiento where idOrden = ".$this->getId()." and idConcepto = ".$idConcepto;
 		$rs = $db->query($sql) or errorMySQL($db, $sql);
 		
 		return $rs?true:false;

@@ -75,6 +75,11 @@ $(document).ready(function(){
 				$("#winImagenes").attr("producto", el.idProducto);
 			});
 			
+			$("[action=uploadPie]").click(function(){
+				var el = jQuery.parseJSON($(this).attr("datos"));
+				$("#winPieTarjeta").attr("producto", el.idProducto);
+			});
+			
 			$("[action=conceptos]").click(function(){
 				var el = jQuery.parseJSON($(this).attr("datos"));
 				$("#winConceptos").find("#producto").val(el.idProducto);
@@ -99,7 +104,7 @@ $(document).ready(function(){
 		getListaImagenes($('#winImagenes').attr("producto"));
 	});
 	
-	$("#winImagenes").find("form").fileupload({
+	$("#winImagenes").find("#frmImagen").fileupload({
 		// This function is called when a file is added to the queue
 		add: function (e, data) {
 	    	
@@ -150,4 +155,39 @@ $(document).ready(function(){
 			});
 		});
 	}
+	
+	
+	$('#winPieTarjeta').on('show.bs.modal', function(e){
+		$("#frmTarjeta").prop("action", "?mod=cproductos&action=uploadPieTarjeta&id=" + $('#winPieTarjeta').attr("producto"));
+	});
+	
+	$("#frmTarjeta").fileupload({
+		// This function is called when a file is added to the queue
+		add: function (e, data) {
+			console.log("Agregado");
+			// Automatically upload the file once it is added to the queue
+			var jqXHR = data.submit();
+		},
+		progress: function(e, data){
+			var progress = parseInt(data.loaded / data.total * 100, 10);
+			
+			if(progress == 100){
+				//data.context.removeClass('working');
+				//getImagenes($("#winUploadImagen").find("form").find("#dispositivo").val());
+			}
+		},
+		fail: function(){
+			alert("Ocurrió un problema en el servidor, contacta al administrador del sistema");
+			
+			console.log("Error en el servidor al subir el archivo, checa permisos de la carpeta repositorio");
+		}, done: function(e, data){
+			var result = jQuery.parseJSON(data.result);
+			
+			if (result.band){
+				$('#winPieTarjeta').modal("hide");
+				alert("Pie de tarjeta actualizado");
+			}else
+				alert("No se pudo subir");
+		}
+	});
 });

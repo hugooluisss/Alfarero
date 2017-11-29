@@ -2,6 +2,16 @@
 global $objModulo;
 $orden = new TOrden;
 $smarty->assign("totalProductosCarrito", $orden->getTotalProductos());
+$directorio = "repositorio/tarjetas/encabezado/";
+
+$db = TBase::conectaDB();
+$sql = "select * from seccion where estado = 1";
+$rs = $db->query($sql) or errorMySQL($db, $sql);
+$datos = array();
+while($row = $rs->fetch_assoc()){
+	$datos[$row['clave']] = $row;
+}
+$smarty->assign("secciones", $datos);
 
 switch($objModulo->getId()){
 	case 'home':
@@ -73,6 +83,21 @@ switch($objModulo->getId()){
 			
 			$obj->estado->setId(2);
 			$obj->guardar();
+		
+			$archivos = array();
+			foreach(scandir($directorio) as $archivo){
+				if (!in_array($archivo, array(".", "..")))
+					array_push($archivos, $archivo);
+			}
+			
+			$db = TBase::conectaDB();
+			$sql = "select * from movimiento join concepto using(idConcepto) join producto using(idProducto) where idOrden = ".$_GET['orderid']." order by cantidad desc";
+			$rs = $db->query($sql) or errorMySQL($db, $sql);
+			$row = $rs->fetch_assoc();
+			
+			$smarty->assign("producto", $row['idProducto']);
+			$smarty->assign("archivos", $archivos);
+			$smarty->assign("directorio", $directorio);
 		}
 	break;
 }

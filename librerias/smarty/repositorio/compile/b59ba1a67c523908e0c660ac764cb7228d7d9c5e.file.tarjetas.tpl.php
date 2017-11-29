@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.11, created on 2017-10-24 12:27:17
+<?php /* Smarty version Smarty-3.1.11, created on 2017-11-19 21:29:13
          compiled from "templates/plantillas/layout/tarjetas.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:186517482459d301893976b2-14581153%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'b59ba1a67c523908e0c660ac764cb7228d7d9c5e' => 
     array (
       0 => 'templates/plantillas/layout/tarjetas.tpl',
-      1 => 1508855955,
+      1 => 1510718910,
       2 => 'file',
     ),
   ),
@@ -133,6 +133,8 @@ tarjetas/js/viewportchecker.js"></script>
 plugins/validate/validate.es.js"></script>
 	    <script type="text/javascript" src="<?php echo $_smarty_tpl->tpl_vars['PAGE']->value['ruta'];?>
 plugins/validate/validate.js"></script>
+	     <script type="text/javascript" src="<?php echo $_smarty_tpl->tpl_vars['PAGE']->value['ruta'];?>
+plugins/jcanvas.js"></script>
 	    
 	    <?php  $_smarty_tpl->tpl_vars['script'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['script']->_loop = false;
  $_from = $_smarty_tpl->tpl_vars['PAGE']->value['scriptsJS']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}

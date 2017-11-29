@@ -88,6 +88,7 @@
 	    
 	    <script type="text/javascript" src="{$PAGE.ruta}plugins/validate/validate.es.js"></script>
 	    <script type="text/javascript" src="{$PAGE.ruta}plugins/validate/validate.js"></script>
+	     <script type="text/javascript" src="{$PAGE.ruta}plugins/jcanvas.js"></script>
 	    
 	    {foreach from=$PAGE.scriptsJS item=script}
 			<script type="text/javascript" src="{$script}?m={rand()}"></script>

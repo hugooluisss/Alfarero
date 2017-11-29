@@ -76,6 +76,25 @@ switch($objModulo->getId()){
 				
 				$smarty->assign("json", array("band" => $result));
 			break;
+			case 'uploadPieTarjeta':
+				$result = false;
+				
+				if ($_GET['id'] <> ''){
+					if(isset($_FILES['upl2']) && $_FILES['upl2']['error'] == 0){
+						$carpeta = "repositorio/tarjetas/pie/";
+						if (!file_exists($carpeta))
+							mkdir($carpeta, 0755);
+							
+						$archivo = "producto".$_GET['id'].".".end(explode(".", $_FILES['upl2']['name']));
+						if(move_uploaded_file($_FILES['upl2']['tmp_name'], $carpeta.$archivo)){
+							chmod($carpeta.$archivo, 0775);
+							$result = true;
+						}
+					}
+				}
+				
+				$smarty->assign("json", array("band" => $result));
+			break;
 			case 'eliminarImagen':
 				$smarty->assign("json", array("band" => unlink($_POST['imagen'])));
 			break;

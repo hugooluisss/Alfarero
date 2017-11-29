@@ -55,3 +55,5 @@
 
 {include file=$PAGE.rutaModulos|cat:"modulos/productos/winImagenes.tpl"}
 {include file=$PAGE.rutaModulos|cat:"modulos/productos/conceptos/panel.tpl"}
+
+{include file=$PAGE.rutaModulos|cat:"modulos/productos/winPieTarjeta.tpl"}

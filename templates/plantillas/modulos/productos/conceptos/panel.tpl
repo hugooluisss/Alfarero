@@ -30,7 +30,7 @@
 			</div>
 		</div>
 	</div>
-<form>
+</form>
 
 
 <div id="winListaConceptos" class="modal fade" role="dialog" producto="">

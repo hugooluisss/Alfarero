@@ -21,13 +21,12 @@ class TMail{
 	public function TMail(){
 		global $ini;
 		$this->phpMailer = new PHPMailer();
-		$datos = $rs->fields;
 		#$this->phpMailer->CharSet("UTF8");
 		global $ini;
 		
 		$this->empresa['nombreCorto'] = utf8_decode($ini['sistema']['nombreEmpresa']);
-		#$this->phpMailer->IsSMTP();
-		$this->phpMailer->Port = $ini['mail']['puerto'];
+		$this->phpMailer->IsSMTP();
+		$this->phpMailer->Port = $ini['mail']['port'];
 		$this->phpMailer->Host = $ini['mail']['server'];
 		#$this->phpMailer->Host = "localhost";
 		

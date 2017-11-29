@@ -1,0 +1,27 @@
+{
+	"files": {
+		"style.less": {
+			"engines": [
+				{
+					"compiler": "less",
+					"output": "style.css",
+					"options": {
+						"compress": false,
+						"ieCompat": false,
+						"strictMath": false,
+						"strictUnits": false,
+						"javascriptEnabled": false,
+						"sourceMap": true,
+						"sourcemap": true
+					}
+				}
+			],
+			"sources": [
+				"less/variables.less",
+				"less/vistas/general.less",
+				"less/vistas/panelCarrito.less",
+				"less/vistas/winProducto.less"
+			]
+		}
+	}
+}

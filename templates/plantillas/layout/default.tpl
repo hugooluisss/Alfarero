@@ -107,17 +107,18 @@
 				<ul class="sidebar-menu">
 					<li class="header">MENÚ PRINCIPAL</li>
 					{if $PAGE.usuario->getPerfil() eq 1}
-					<li class="{if in_array($PAGE.modulo, array('usuarios'))}active{/if} treeview">
+					<li class="{if in_array($PAGE.modulo, array('usuarios', 'secciones'))}active{/if} treeview">
 						<a href="#">
 							<i class="fa fa-dashboard"></i>
 							<span>Administración</span> <i class="fa fa-angle-left pull-right"></i>
 						</a>
 						<ul class="treeview-menu">
 							<li {if $PAGE.modulo eq 'usuarios'}class="active"{/if}><a href="usuarios">Usuarios</a></li>
+							<li {if $PAGE.modulo eq 'secciones'}class="active"{/if}><a href="secciones">Secciones</a></li>
 						</ul>
 					</li>
 					
-					<li class="{if in_array($PAGE.modulo, array('categorias', 'productos'))}active{/if} treeview">
+					<li class="{if in_array($PAGE.modulo, array('categorias', 'productos', 'tarjetas'))}active{/if} treeview">
 						<a href="#">
 							<i class="fa fa-product-hunt" aria-hidden="true"></i>
 							<span>Inventario</span> <i class="fa fa-angle-left pull-right"></i>
@@ -125,6 +126,7 @@
 						<ul class="treeview-menu">
 							<li {if $PAGE.modulo eq 'categorias'}class="active"{/if}><a href="categorias">Categorías</a></li>
 							<li {if $PAGE.modulo eq 'productos'}class="active"{/if}><a href="productos">Productos</a></li>
+							<li {if $PAGE.modulo eq 'tarjetas'}class="active"{/if}><a href="tarjetas">Tarjetas de regalo</a></li>
 						</ul>
 					</li>
 					<li class="{if in_array($PAGE.modulo, array('ordenes'))}active{/if} treeview">

@@ -37,7 +37,9 @@
 
 			{foreach from=$carrito item="row"}
 				{assign var="total" value=$total+($row.cantidad*$row.precio) nocache}
-				<td>{$row.cantidad}</td>
+				<td>
+					<button class="btn btn-link btn-danger" title="Eliminar" style="cursor: pointer" action="eliminar" concepto="{$row.idConcepto}"><i class="fa fa-times" aria-hidden="true"></i></button>
+				</td>
 					<td>{$row.descripcion}</td>
 					<td class="text-right">Q.{$row.precio}</td>
 				<div class="row detalle-item">
@@ -246,7 +248,7 @@
 					<input type="hidden" name="orderid" value="{$orden->getId()}" id="orderid">
 					<input type="hidden" name="key_id" value="{$key_id}" id="key_id">
 					<input type="hidden" name="cvv" id="cvv" value="">
-					<input type="hidden" name="redirect" value="{$PAGE.url}validarPago" id="redirect">
+					<input type="hidden" name="redirect" value="{$PAGE.url}?mod=validarPago" id="redirect">
 					
 					<button type="submit" class="donar">Donar</button>
 				</form>

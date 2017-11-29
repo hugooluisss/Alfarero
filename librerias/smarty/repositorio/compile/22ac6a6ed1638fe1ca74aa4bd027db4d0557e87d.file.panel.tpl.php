@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.11, created on 2017-10-15 19:02:51
+<?php /* Smarty version Smarty-3.1.11, created on 2017-11-19 22:28:23
          compiled from "templates/plantillas/modulos/productos/panel.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:75397262359d422659d94a2-39170958%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '22ac6a6ed1638fe1ca74aa4bd027db4d0557e87d' => 
     array (
       0 => 'templates/plantillas/modulos/productos/panel.tpl',
-      1 => 1508110552,
+      1 => 1511152063,
       2 => 'file',
     ),
   ),
@@ -89,4 +89,7 @@ $_smarty_tpl->tpl_vars["row"]->_loop = true;
 <?php echo $_smarty_tpl->getSubTemplate (($_smarty_tpl->tpl_vars['PAGE']->value['rutaModulos']).("modulos/productos/winImagenes.tpl"), $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
 
 <?php echo $_smarty_tpl->getSubTemplate (($_smarty_tpl->tpl_vars['PAGE']->value['rutaModulos']).("modulos/productos/conceptos/panel.tpl"), $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
+
+
+<?php echo $_smarty_tpl->getSubTemplate (($_smarty_tpl->tpl_vars['PAGE']->value['rutaModulos']).("modulos/productos/winPieTarjeta.tpl"), $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
 <?php }} ?>

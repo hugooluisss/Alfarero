@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.11, created on 2017-10-15 19:02:51
+<?php /* Smarty version Smarty-3.1.11, created on 2017-11-19 22:53:03
          compiled from "templates/plantillas/modulos/productos/conceptos/panel.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:147191265959e0ca8c3db6c2-58193220%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '60deb3822a2105ff9f65c1af091ccfab0812d797' => 
     array (
       0 => 'templates/plantillas/modulos/productos/conceptos/panel.tpl',
-      1 => 1508110552,
+      1 => 1511153580,
       2 => 'file',
     ),
   ),
@@ -51,7 +51,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 			</div>
 		</div>
 	</div>
-<form>
+</form>
 
 
 <div id="winListaConceptos" class="modal fade" role="dialog" producto="">

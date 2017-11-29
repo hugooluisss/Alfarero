@@ -36,7 +36,7 @@ TOrden = function(){
 		
 		$.post('cordenes', {
 			"concepto": datos.concepto,
-			"action": "del"
+			"action": "delMovimiento"
 		}, function(data){
 			if (datos.fn.after != undefined)
 				datos.fn.after(data);

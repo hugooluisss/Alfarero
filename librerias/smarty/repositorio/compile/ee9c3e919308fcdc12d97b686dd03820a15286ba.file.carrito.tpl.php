@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.11, created on 2017-10-24 12:27:43
+<?php /* Smarty version Smarty-3.1.11, created on 2017-11-21 11:45:48
          compiled from "templates/plantillas/modulos/front-end/carrito.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:122368470159ed10805065c0-52236951%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'ee9c3e919308fcdc12d97b686dd03820a15286ba' => 
     array (
       0 => 'templates/plantillas/modulos/front-end/carrito.tpl',
-      1 => 1508860657,
+      1 => 1511286236,
       2 => 'file',
     ),
   ),
@@ -76,8 +76,10 @@ foreach ($_from as $_smarty_tpl->tpl_vars["row"]->key => $_smarty_tpl->tpl_vars[
 $_smarty_tpl->tpl_vars["row"]->_loop = true;
 ?>
 				<?php $_smarty_tpl->tpl_vars["total"] = new Smarty_variable($_smarty_tpl->tpl_vars['total']->value+($_smarty_tpl->tpl_vars['row']->value['cantidad']*$_smarty_tpl->tpl_vars['row']->value['precio']), true, 0);?>
-				<td><?php echo $_smarty_tpl->tpl_vars['row']->value['cantidad'];?>
-</td>
+				<td>
+					<button class="btn btn-link btn-danger" title="Eliminar" style="cursor: pointer" action="eliminar" concepto="<?php echo $_smarty_tpl->tpl_vars['row']->value['idConcepto'];?>
+"><i class="fa fa-times" aria-hidden="true"></i></button>
+				</td>
 					<td><?php echo $_smarty_tpl->tpl_vars['row']->value['descripcion'];?>
 </td>
 					<td class="text-right">Q.<?php echo $_smarty_tpl->tpl_vars['row']->value['precio'];?>
@@ -299,7 +301,7 @@ $_smarty_tpl->tpl_vars["row"]->_loop = true;
 " id="key_id">
 					<input type="hidden" name="cvv" id="cvv" value="">
 					<input type="hidden" name="redirect" value="<?php echo $_smarty_tpl->tpl_vars['PAGE']->value['url'];?>
-validarPago" id="redirect">
+?mod=validarPago" id="redirect">
 					
 					<button type="submit" class="donar">Donar</button>
 				</form>

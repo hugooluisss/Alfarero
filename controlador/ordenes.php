@@ -57,8 +57,8 @@ switch($objModulo->getId()){
 			break;
 			*/
 			case 'delMovimiento':
-				$obj = new TOrden($_POST['id']);
-				#$smarty->assign("json", array("band" => $obj->eliminar(), "totalProductos" => $obj->getTotalProductos()));
+				$obj = new TOrden();
+				$smarty->assign("json", array("band" => $obj->delMovimiento($_POST['concepto']), "totalProductos" => $obj->getTotalProductos()));
 			break;
 			case 'setCliente':
 				$obj = new TOrden;
